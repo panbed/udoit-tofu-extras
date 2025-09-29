@@ -1,0 +1,3 @@
+[submodule "equal-access-server"]
+	path = equal-access-server
+	url = https://github.com/panbed/equal-access-server

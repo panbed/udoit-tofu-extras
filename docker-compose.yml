@@ -1,0 +1,20 @@
+services:
+  web:
+    container_name: udoit-web
+    image: ghcr.io/ucfopen/udoit:new-main-page-UX
+    ports:
+      - "80:80"
+    env_file:
+      - .env
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+      
+  ace:
+    container_name: udoit-ace
+    build:
+      context: ./equal-access-server
+      dockerfile: Dockerfile.ace
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
