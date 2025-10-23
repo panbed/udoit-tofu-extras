@@ -1,4 +1,4 @@
 #!/bin/bash
 
-cd /home/ec2-user/udoit
+cd /home/ubuntu/udoit
 docker compose up -d
