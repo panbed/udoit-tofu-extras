@@ -15,9 +15,15 @@ services:
     ports:
       - "5000:5000"
     volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
       - .env:/app/external.env
     networks:
       - uconfigit-net
+  web:
+    container_name: udoit-web
+    image: ghcr.io/ucfopen/udoit:new-main-page-UX
+    env_file:
+      - .env
 
 networks:
   uconfigit-net:
